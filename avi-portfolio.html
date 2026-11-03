@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Avi Kaushik | Software Developer Portfolio</title>
+<meta name="description" content="Portfolio of Avi Kaushik, a Computer Science graduate focused on Java, DSA and backend development.">
+<style>
+:root{--bg:#f7f8fb;--surface:#fff;--text:#12172b;--muted:#5a6280;--line:#e3e6f0;--accent:#4f46e5;--accent2:#0ea5a4;--chip:#eef0ff;--shadow:0 6px 24px rgba(30,40,90,.08);color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1020;--surface:#161a30;--text:#eef0fa;--muted:#9ba3c4;--line:#262b48;--accent:#8b8cff;--accent2:#2dd4bf;--chip:#20254a;--shadow:0 6px 24px rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1020;--surface:#161a30;--text:#eef0fa;--muted:#9ba3c4;--line:#262b48;--accent:#8b8cff;--accent2:#2dd4bf;--chip:#20254a;--shadow:0 6px 24px rgba(0,0,0,.4);color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--surface)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:16px;height:58px}
+.logo{font-weight:800;letter-spacing:-.02em}.logo span{color:var(--accent)}
+nav{margin-left:auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav a{padding:6px 12px;border-radius:99px;font-size:.9rem;color:var(--muted);white-space:nowrap}
+nav a:hover,nav a.on{background:var(--chip);color:var(--accent)}
+#theme{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:99px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex:none}
+.hero{padding:72px 0 48px;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
+.hi{color:var(--accent2);font-weight:600}
+h1{font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.1;margin:.2em 0;letter-spacing:-.03em}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:1.25rem;min-height:1.9em;color:var(--muted)}
+.cur{display:inline-block;width:2px;height:1.1em;background:var(--accent);vertical-align:-3px;margin-left:2px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.lead{max-width:56ch;color:var(--muted)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{padding:10px 18px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-weight:600;font-size:.92rem;cursor:pointer;color:var(--text);font-family:inherit}
+.btn.p{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn{transition:transform .15s,box-shadow .15s}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+.avatar{width:150px;height:150px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;font-size:3rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+.facts{list-style:none;padding:0;margin:0;font-size:.92rem;color:var(--muted)}.facts li{padding:5px 0;border-top:1px solid var(--line)}.facts b{color:var(--text)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+.stat{text-align:center;padding:18px 10px}.stat b{display:block;font-size:2rem;color:var(--accent)}.stat span{color:var(--muted);font-size:.85rem}
+section{padding:56px 0}
+h2{font-size:1.8rem;margin:0 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);margin:0 0 26px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skills h3,.proj h3{margin:0 0 10px;font-size:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{background:var(--chip);color:var(--accent);padding:4px 11px;border-radius:99px;font-size:.8rem;font-weight:600}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.f{border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:6px 16px;border-radius:99px;cursor:pointer;font:inherit;font-size:.88rem}
+.f.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.proj{display:flex;flex-direction:column;transition:transform .2s}.proj:hover{transform:translateY(-4px)}
+.proj .top{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:.8rem;margin-bottom:8px}
+.proj ul{padding-left:18px;margin:8px 0 14px;color:var(--muted);font-size:.9rem}.proj li{margin-bottom:4px}
+.proj .chips{margin-top:auto;margin-bottom:14px}
+.proj a{color:var(--accent);font-weight:600;font-size:.9rem}
+.proj.hide{display:none}
+.tl{border-left:2px solid var(--line);padding-left:20px;margin-left:6px}
+.tl .it{position:relative;margin-bottom:22px}.tl .it::before{content:"";position:absolute;left:-27px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--chip)}
+.tl h3{margin:0}.tl small{color:var(--muted)}
+.ach{list-style:none;padding:0;margin:0}.ach li{padding:10px 0 10px 30px;position:relative;border-top:1px solid var(--line)}.ach li:first-child{border:0}.ach li::before{content:"★";position:absolute;left:4px;color:var(--accent2)}
+.contact{text-align:center}.contact .btns{justify-content:center}
+.ok{color:var(--accent2);font-weight:600;min-height:1.5em;margin-top:10px}
+footer{border-top:1px solid var(--line);padding:22px 0;text-align:center;color:var(--muted);font-size:.85rem}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:40px}.grid,.skills{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.logo{display:none}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.cur{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+<a class="logo" href="#top">Avi<span>.</span>dev</a>
+<nav id="nav"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a></nav>
+<button id="theme" aria-label="Toggle theme">◐</button>
+</div></header>
+
+<main id="top">
+<div class="wrap">
+<div class="hero">
+<div>
+<div class="hi">Hi, I’m</div>
+<h1><span class="grad">Avi Kaushik</span></h1>
+<div class="role"><span id="typed"></span><span class="cur"></span></div>
+<p class="lead">Computer Science graduate (B.E., 2026) with a strong base in Java, Data Structures &amp; Algorithms and OOP. I build RESTful APIs and real-time apps, and I’m looking for a Software Development Engineer role where I can ship reliable software.</p>
+<div class="btns">
+<a class="btn p" href="#projects">View Projects</a>
+<a class="btn" href="https://github.com/Avi513" target="_blank" rel="noopener">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/avi-kaushik-aa871828a/" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="https://leetcode.com/u/Avi513/" target="_blank" rel="noopener">LeetCode</a>
+</div>
+</div>
+<div class="card" style="text-align:center">
+<div class="avatar">AK</div>
+<ul class="facts" style="text-align:left">
+<li><b>Location:</b> Rewari, Haryana</li>
+<li><b>Degree:</b> B.E. CSE, 2022–2026</li>
+<li><b>University:</b> Chandigarh University</li>
+<li><b>Status:</b> Open to SDE roles</li>
+</ul>
+</div>
+</div>
+
+<div class="stats">
+<div class="card stat rv"><b data-n="100" data-s="+">0</b><span>LeetCode problems</span></div>
+<div class="card stat rv"><b data-n="4" data-s="">0</b><span>Projects built</span></div>
+<div class="card stat rv"><b data-n="1" data-s="">0</b><span>Research paper presented</span></div>
+<div class="card stat rv"><b data-n="1" data-s="">0</b><span>Certification</span></div>
+</div>
+</div>
+
+<section id="about"><div class="wrap rv">
+<h2>About me</h2><p class="sub">A quick introduction.</p>
+<div class="grid">
+<div class="card"><p style="margin-top:0">I enjoy turning ideas into working backend systems. My projects cover media upload, subscriptions, real-time chat and booking workflows, using Node.js, Express.js, MongoDB, Java and MySQL.</p><p style="margin-bottom:0">I have practical exposure to JWT authentication, MongoDB aggregation pipelines and database design, and I keep practising DSA on LeetCode.</p></div>
+<div class="card"><p style="margin-top:0"><b>Research:</b> I presented a peer-reviewed research paper on secure file storage using hybrid cryptography.</p><p style="margin-bottom:0"><b>Currently learning:</b> Spring Boot and Spring Security, to build production-style Java backends.</p></div>
+</div></div></section>
+
+<section id="skills"><div class="wrap rv">
+<h2>Skills</h2><p class="sub">Tools and concepts I work with.</p>
+<div class="skills">
+<div class="card"><h3>Languages</h3><div class="chips"><span class="chip">Java</span><span class="chip">JavaScript</span><span class="chip">SQL</span><span class="chip">HTML</span><span class="chip">CSS</span></div></div>
+<div class="card"><h3>Backend &amp; Frameworks</h3><div class="chips"><span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">React.js</span><span class="chip">REST API Design</span><span class="chip">JWT Auth</span><span class="chip">Socket.io</span></div></div>
+<div class="card"><h3>Databases</h3><div class="chips"><span class="chip">MongoDB</span><span class="chip">Aggregation Pipelines</span><span class="chip">Schema Design</span><span class="chip">MySQL</span></div></div>
+<div class="card"><h3>CS Fundamentals</h3><div class="chips"><span class="chip">DSA</span><span class="chip">OOP</span><span class="chip">DBMS</span><span class="chip">Operating Systems</span><span class="chip">System Design</span></div></div>
+<div class="card"><h3>Tools &amp; Platforms</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Postman</span><span class="chip">Cloudinary</span><span class="chip">Multer</span><span class="chip">VS Code</span></div></div>
+<div class="card"><h3>Learning</h3><div class="chips"><span class="chip">Spring Boot</span><span class="chip">Spring Security</span><span class="chip">JPA / Hibernate</span></div></div>
+</div></div></section>
+
+<section id="projects"><div class="wrap rv">
+<h2>Projects</h2><p class="sub">Things I have designed and built.</p>
+<div class="filters" id="filters"><button class="f on" data-f="all">All</button><button class="f" data-f="backend">Backend</button><button class="f" data-f="fullstack">Full-stack</button><button class="f" data-f="frontend">Frontend</button></div>
+<div class="grid" id="pgrid">
+<article class="card proj" data-c="backend"><div class="top"><span>Backend</span><span>2026</span></div><h3>YouTube Backend Design</h3>
+<ul><li>Scalable REST backend replicating core YouTube features: video upload, channel subscriptions and user authentication.</li><li>Subscription system built on MongoDB aggregation pipelines for consistent subscriber counts.</li><li>Cloudinary and Multer for media storage, with all endpoints validated in Postman.</li></ul>
+<div class="chips"><span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">MongoDB</span><span class="chip">Cloudinary</span><span class="chip">Multer</span></div>
+<a href="https://github.com/Avi513?tab=repositories" target="_blank" rel="noopener">View on GitHub →</a></article>
+
+<article class="card proj" data-c="fullstack"><div class="top"><span>Full-stack</span><span>2026</span></div><h3>Real-Time Chat Application</h3>
+<ul><li>Instant one-on-one and group messaging over WebSockets using Socket.io.</li><li>User authentication and persistent message history across sessions.</li><li>Responsive React.js frontend connected to a Node.js and Express.js backend.</li></ul>
+<div class="chips"><span class="chip">Node.js</span><span class="chip">Socket.io</span><span class="chip">MongoDB</span><span class="chip">React.js</span></div>
+<a href="https://github.com/Avi513?tab=repositories" target="_blank" rel="noopener">View on GitHub →</a></article>
+
+<article class="card proj" data-c="fullstack"><div class="top"><span>Full-stack · Java</span><span>2025</span></div><h3>Hotel Management System</h3>
+<ul><li>Handles room booking, check-in/check-out and reservation workflows.</li><li>CRUD for customer records, bookings and billing, backed by MySQL.</li></ul>
+<div class="chips"><span class="chip">Java</span><span class="chip">JSP</span><span class="chip">Servlets</span><span class="chip">MySQL</span></div>
+<a href="https://github.com/Avi513?tab=repositories" target="_blank" rel="noopener">View on GitHub →</a></article>
+
+<article class="card proj" data-c="frontend"><div class="top"><span>Frontend</span><span>2025</span></div><h3>Smart Expense Tracker</h3>
+<ul><li>Categorise transactions and monitor spending patterns in the browser.</li><li>Full CRUD, category filters and automated monthly summaries using Local Storage.</li></ul>
+<div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Local Storage</span></div>
+<a href="https://github.com/Avi513?tab=repositories" target="_blank" rel="noopener">View on GitHub →</a></article>
+</div></div></section>
+
+<section id="education"><div class="wrap rv">
+<h2>Education</h2><p class="sub">Where I studied.</p>
+<div class="tl">
+<div class="it"><h3>Bachelor of Engineering, Computer Science &amp; Engineering</h3><div>Chandigarh University, Mohali, Punjab</div><small>2022 – 2026</small></div>
+<div class="it"><h3>CBSE, Class XII</h3><div>Pathfinder Global School, Rewari, Haryana</div><small>Apr 2021 – Mar 2022 · 75%</small></div>
+</div></div></section>
+
+<section id="achievements"><div class="wrap rv">
+<h2>Achievements &amp; Certifications</h2><p class="sub">Highlights so far.</p>
+<div class="card"><ul class="ach">
+<li>Solved 100+ Data Structures &amp; Algorithms problems on LeetCode.</li>
+<li>Presented a peer-reviewed research paper on secure file storage using hybrid cryptography.</li>
+<li>Certified in Internet of Things (IoT): Design Concepts and Use Cases, SWAYAM / NITTTR Chandigarh, 2024 (76%).</li>
+</ul></div></div></section>
+
+<section id="contact"><div class="wrap rv contact">
+<h2>Let’s work together</h2><p class="sub">I’m open to Software Development Engineer roles. Say hello!</p>
+<div class="btns">
+<a class="btn p" href="mailto:avik03467@gmail.com">avik03467@gmail.com</a>
+<button class="btn" id="copy">Copy email</button>
+<a class="btn" href="tel:+919053316440">+91-9053316440</a>
+</div>
+<div class="ok" id="ok" aria-live="polite"></div>
+</div></section>
+</main>
+<footer>© <span id="yr">2026</span> Avi Kaushik · Built with HTML, CSS and JavaScript</footer>
+
+<script>
+(function(){
+var root=document.documentElement;
+try{var t=localStorage.getItem("theme");if(t)root.setAttribute("data-theme",t)}catch(e){}
+document.getElementById("theme").onclick=function(){
+var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);
+var n=dark?"light":"dark";root.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}};
+document.getElementById("yr").textContent=new Date().getFullYear();
+var roles=["Software Development Engineer","Java Developer","Backend Developer (Node.js)","DSA Enthusiast"],ri=0,ci=0,del=false,el=document.getElementById("typed");
+function tick(){var w=roles[ri];el.textContent=w.slice(0,ci);
+if(!del&&ci<w.length){ci++;setTimeout(tick,70)}else if(!del){del=true;setTimeout(tick,1400)}
+else if(ci>0){ci--;setTimeout(tick,35)}else{del=false;ri=(ri+1)%roles.length;setTimeout(tick,300)}}
+tick();
+document.getElementById("filters").onclick=function(e){var f=e.target.getAttribute("data-f");if(!f)return;
+document.querySelectorAll(".f").forEach(function(b){b.classList.toggle("on",b===e.target)});
+document.querySelectorAll(".proj").forEach(function(p){p.classList.toggle("hide",f!=="all"&&p.getAttribute("data-c")!==f)})};
+function count(b){var n=+b.dataset.n,s=b.dataset.s,i=0,st=Math.max(1,Math.ceil(n/40));
+var iv=setInterval(function(){i=Math.min(n,i+st);b.textContent=i+s;if(i>=n)clearInterval(iv)},30)}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");
+x.target.querySelectorAll("[data-n]").forEach(count);io.unobserve(x.target)}})},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(r){io.observe(r)});
+var links=document.querySelectorAll("#nav a"),secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute("href"))});
+addEventListener("scroll",function(){var y=scrollY+120,cur=-1;secs.forEach(function(s,i){if(s.offsetTop<=y)cur=i});
+links.forEach(function(a,i){a.classList.toggle("on",i===cur)})},{passive:true});
+document.getElementById("copy").onclick=function(){var ok=document.getElementById("ok"),m="avik03467@gmail.com";
+function done(){ok.textContent="Email copied!";setTimeout(function(){ok.textContent=""},2000)}
+try{navigator.clipboard.writeText(m).then(done,function(){ok.textContent=m})}catch(e){ok.textContent=m}};
+})();
+</script>
+</body>
+</html>
